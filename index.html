@@ -29,10 +29,10 @@
   --bg: #faf9fc;
   --card: #ffffff;
   --border: #e8e4ef;
-  --radius: 16px;
-  --radius-sm: 10px;
-  --shadow: 0 2px 12px rgba(101, 45, 160, 0.08);
-  --shadow-lg: 0 8px 32px rgba(101, 45, 160, 0.12);
+  --radius: 20px;
+  --radius-sm: 12px;
+  --shadow: 0 2px 16px rgba(101, 45, 160, 0.09);
+  --shadow-lg: 0 8px 32px rgba(101, 45, 160, 0.14);
 }
 
 html { scroll-behavior: smooth; }
@@ -47,9 +47,9 @@ body {
 
 /* ---------- Layout ---------- */
 .container {
-  max-width: 680px;
+  max-width: 1060px;
   margin: 0 auto;
-  padding: 24px 20px 48px;
+  padding: 28px 32px 60px;
 }
 
 .screen { display: none; }
@@ -58,7 +58,7 @@ body {
 /* ---------- Header ---------- */
 .header {
   text-align: center;
-  padding: 32px 0 24px;
+  padding: 36px 0 28px;
 }
 .header .logo {
   font-size: 1.1rem;
@@ -68,22 +68,22 @@ body {
   margin-bottom: 4px;
 }
 .header h1 {
-  font-size: 1.75rem;
+  font-size: 2.1rem;
   font-weight: 700;
   color: var(--brand-dark);
   line-height: 1.25;
 }
 .header .subtitle {
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   color: var(--text-muted);
-  margin-top: 6px;
+  margin-top: 8px;
 }
 
 /* ---------- Cards ---------- */
 .card {
   background: var(--card);
   border-radius: var(--radius);
-  padding: 28px 24px;
+  padding: 40px 40px;
   box-shadow: var(--shadow);
   border: 1px solid var(--border);
   margin-bottom: 20px;
@@ -92,29 +92,29 @@ body {
 /* ---------- Forms ---------- */
 label {
   display: block;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--text);
-  margin-bottom: 6px;
+  margin-bottom: 7px;
 }
 label .optional {
   font-weight: 400;
   color: var(--text-muted);
-  font-size: 0.82rem;
+  font-size: 0.88rem;
 }
 input[type="text"],
 input[type="email"],
 select {
   width: 100%;
-  padding: 12px 14px;
+  padding: 14px 16px;
   border: 2px solid var(--border);
   border-radius: var(--radius-sm);
   font-family: inherit;
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: var(--text);
   background: var(--card);
   transition: border-color 0.2s;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 input:focus, select:focus {
   outline: none;
@@ -125,28 +125,28 @@ input:focus, select:focus {
 .checkbox-row {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
-  margin: 20px 0 24px;
+  gap: 12px;
+  margin: 20px 0 28px;
 }
 .checkbox-row input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   margin-top: 2px;
   accent-color: var(--brand);
   flex-shrink: 0;
 }
 .checkbox-row label {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 400;
   color: var(--text-muted);
   margin-bottom: 0;
   cursor: pointer;
 }
 .email-note {
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   color: var(--accent);
-  margin-top: -12px;
-  margin-bottom: 12px;
+  margin-top: -14px;
+  margin-bottom: 14px;
   min-height: 1.2em;
 }
 
@@ -156,19 +156,20 @@ input:focus, select:focus {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 14px 32px;
+  padding: 18px 40px;
   border: none;
   border-radius: var(--radius-sm);
   font-family: inherit;
-  font-size: 1.05rem;
-  font-weight: 600;
+  font-size: 1.2rem;
+  font-weight: 700;
   cursor: pointer;
   transition: background 0.2s, transform 0.1s, opacity 0.2s;
   text-decoration: none;
+  letter-spacing: 0.01em;
 }
 .btn:active { transform: scale(0.97); }
 .btn:disabled {
-  opacity: 0.45;
+  opacity: 0.4;
   cursor: not-allowed;
   transform: none;
 }
@@ -193,14 +194,14 @@ input:focus, select:focus {
 .instructions-list li {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
-  padding: 10px 0;
-  font-size: 1rem;
+  gap: 14px;
+  padding: 12px 0;
+  font-size: 1.1rem;
 }
 .instructions-list .num {
   flex-shrink: 0;
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: var(--brand);
   color: #fff;
@@ -208,15 +209,15 @@ input:focus, select:focus {
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 /* ---------- Progress bar ---------- */
 .progress-bar {
   background: var(--brand-light);
   border-radius: 100px;
-  height: 10px;
-  margin: 12px 0 6px;
+  height: 12px;
+  margin: 16px 0 8px;
   overflow: hidden;
 }
 .progress-fill {
@@ -224,19 +225,19 @@ input:focus, select:focus {
   background: var(--brand);
   border-radius: 100px;
   transition: width 0.4s ease;
-  min-width: 4%;
+  min-width: 3%;
 }
 .progress-count {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   color: var(--text-muted);
   text-align: center;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 /* ---------- Question layout ---------- */
 .q-layout {
   display: flex;
-  gap: 20px;
+  gap: 24px;
   align-items: flex-start;
 }
 .q-layout.no-hint .q-main { flex: 1; }
@@ -244,31 +245,32 @@ input:focus, select:focus {
 
 /* Hint panel (side) */
 .q-side {
-  flex: 0 0 200px;
+  flex: 0 0 220px;
   background: var(--warn-light);
   border: 2px solid var(--warn);
   border-radius: var(--radius-sm);
-  padding: 1.26rem 1.4rem;
+  padding: 1.4rem 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   text-align: center;
 }
 .q-side .tip-icon {
-  font-size: 2.24rem;
+  font-size: 2.6rem;
   line-height: 1;
 }
 .q-side .tip-text {
-  font-size: 1.26rem;
+  font-size: 1.25rem;
   line-height: 1.5;
   color: var(--text);
   font-weight: 500;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 700px) {
   .q-layout { flex-direction: column; }
   .q-side { flex: none; width: 100%; flex-direction: row; text-align: left; }
+  .container { padding: 16px 16px 40px; }
 }
 
 /* ---------- Illustration ---------- */
@@ -276,44 +278,44 @@ input:focus, select:focus {
   background: var(--card);
   border-radius: var(--radius-sm);
   border: 2px solid var(--border);
-  border-top: 4px solid var(--brand);
-  padding: 16px;
-  margin-bottom: 16px;
+  border-top: 5px solid var(--brand);
+  padding: 24px;
+  margin-bottom: 20px;
   text-align: center;
 }
 .q-illus svg {
   max-width: 100%;
-  max-height: 200px;
+  max-height: 300px;
 }
 
 /* ---------- Question text ---------- */
 .q-text {
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1.65rem;
+  font-weight: 700;
   color: var(--text);
-  margin-bottom: 20px;
-  line-height: 1.45;
+  margin-bottom: 24px;
+  line-height: 1.4;
 }
 
 /* ---------- Answer buttons ---------- */
 .answers {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 20px;
+  gap: 12px;
+  margin-bottom: 24px;
 }
 .answer {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 18px;
   width: 100%;
-  padding: 14px 16px;
+  padding: 20px 22px;
   background: var(--card);
-  border: 2px solid var(--border);
+  border: 2.5px solid var(--border);
   border-radius: var(--radius-sm);
   cursor: pointer;
   font-family: inherit;
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: var(--text);
   text-align: left;
   transition: border-color 0.2s, background 0.2s;
@@ -327,15 +329,15 @@ input:focus, select:focus {
 
 .answer-badge {
   flex-shrink: 0;
-  width: 36px;
-  height: 36px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   position: relative;
 }
 .badge-letter, .badge-tick {
@@ -343,16 +345,16 @@ input:focus, select:focus {
   transition: opacity 0.18s;
 }
 .badge-tick { opacity: 0; }
-.badge-tick svg { width: 18px; height: 18px; }
+.badge-tick svg { width: 22px; height: 22px; }
 .answer.selected .badge-letter { opacity: 0; }
 .answer.selected .badge-tick { opacity: 1; }
 
 .answer-text { flex: 1; }
 
-/* ---------- Encouragement (every 6th question) ---------- */
+/* ---------- Encouragement ---------- */
 .encouragement {
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--brand);
   font-weight: 600;
   padding: 8px 0;
@@ -367,87 +369,87 @@ input:focus, select:focus {
 .confidence-options {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin: 20px 0;
+  gap: 14px;
+  margin: 24px 0;
 }
 .confidence-btn {
-  padding: 16px;
+  padding: 20px 16px;
   border: 2px solid var(--border);
   border-radius: var(--radius-sm);
   background: var(--card);
   cursor: pointer;
   text-align: center;
   font-family: inherit;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   font-weight: 500;
   color: var(--text);
   transition: border-color 0.2s, background 0.2s;
 }
-.confidence-btn .emoji { font-size: 1.8rem; display: block; margin-bottom: 6px; }
+.confidence-btn .emoji { font-size: 2.2rem; display: block; margin-bottom: 8px; }
 .confidence-btn:hover { border-color: var(--brand); }
 .confidence-btn.selected { border-color: var(--brand); background: var(--brand-light); }
 
 /* ---------- Well done screen ---------- */
 .celebration {
   text-align: center;
-  padding: 40px 0;
+  padding: 48px 0;
 }
-.celebration .big-emoji { font-size: 4rem; margin-bottom: 12px; }
-.celebration h2 { font-size: 1.5rem; color: var(--brand-dark); margin-bottom: 8px; }
-.celebration p { color: var(--text-muted); margin-bottom: 24px; }
+.celebration .big-emoji { font-size: 5rem; margin-bottom: 16px; }
+.celebration h2 { font-size: 1.8rem; color: var(--brand-dark); margin-bottom: 10px; }
+.celebration p { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 10px; }
 
 /* ---------- Report ---------- */
-.report-header { text-align: center; margin-bottom: 24px; }
-.report-header h2 { font-size: 1.4rem; color: var(--brand-dark); }
-.report-header .meta { font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; }
+.report-header { text-align: center; margin-bottom: 28px; }
+.report-header h2 { font-size: 1.6rem; color: var(--brand-dark); }
+.report-header .meta { font-size: 0.9rem; color: var(--text-muted); margin-top: 6px; }
 
 .report-summary {
   background: var(--brand-light);
   border-radius: var(--radius-sm);
-  padding: 20px;
+  padding: 24px;
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 
 .rcard {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
-  padding: 20px;
-  margin-bottom: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
 }
-.rcard h3 { font-size: 1rem; font-weight: 600; margin-bottom: 6px; }
-.rcard p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.55; }
-.rcard.good { border-left: 4px solid var(--success); }
-.rcard.grow { border-left: 4px solid var(--warn); }
+.rcard h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 8px; }
+.rcard p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; }
+.rcard.good { border-left: 5px solid var(--success); }
+.rcard.grow { border-left: 5px solid var(--warn); }
 .rcard .home {
-  margin-top: 10px;
-  padding-top: 10px;
+  margin-top: 12px;
+  padding-top: 12px;
   border-top: 1px solid var(--border);
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: var(--text);
 }
 
 .section-heading {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: var(--brand-dark);
-  margin: 28px 0 12px;
+  margin: 32px 0 14px;
 }
 
 .save-status {
   text-align: center;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
-  margin-top: 16px;
+  margin-top: 20px;
 }
 
 .report-closing {
   text-align: center;
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--text);
-  margin: 28px 0 20px;
-  line-height: 1.6;
+  margin: 32px 0 24px;
+  line-height: 1.65;
 }
 
 /* ---------- Print ---------- */
@@ -515,14 +517,14 @@ input:focus, select:focus {
   <!-- ===== SCREEN: Instructions ===== -->
   <div id="screen-instructions" class="screen">
     <div class="card">
-      <h2 style="margin-bottom: 16px; color: var(--brand-dark);">Ready, <span id="child-name-inst"></span>?</h2>
+      <h2 style="margin-bottom: 20px; color: var(--brand-dark); font-size: 1.5rem;">Ready, <span id="child-name-inst"></span>?</h2>
       <ul class="instructions-list">
         <li><span class="num">1</span><span>Read each question carefully.</span></li>
         <li><span class="num">2</span><span>Tap the answer you think is right.</span></li>
         <li><span class="num">3</span><span>Press <strong>Next</strong> to move on.</span></li>
         <li><span class="num">4</span><span>It's OK not to know — just have a good try!</span></li>
       </ul>
-      <div style="margin-top: 20px;">
+      <div style="margin-top: 28px;">
         <button id="to-questions-btn" class="btn btn-primary btn-full">Start the questions</button>
       </div>
     </div>
@@ -550,8 +552,8 @@ input:focus, select:focus {
   <!-- ===== SCREEN: Confidence (child) ===== -->
   <div id="screen-confidence" class="screen">
     <div class="card" style="text-align: center;">
-      <h2 style="color: var(--brand-dark); margin-bottom: 8px;">How did that feel?</h2>
-      <p style="color: var(--text-muted); margin-bottom: 20px;">Be honest — there are no wrong answers here!</p>
+      <h2 style="color: var(--brand-dark); margin-bottom: 10px; font-size: 1.5rem;">How did that feel?</h2>
+      <p style="color: var(--text-muted); margin-bottom: 24px; font-size: 1.05rem;">Be honest — there are no wrong answers here!</p>
       <div id="confidence-options" class="confidence-options" role="radiogroup" aria-label="How did the questions feel?">
         <button type="button" class="confidence-btn" data-value="easy" role="radio" aria-checked="false" tabindex="0">
           <span class="emoji">😊</span>Easy
@@ -576,7 +578,7 @@ input:focus, select:focus {
       <div class="big-emoji">🌟</div>
       <h2>Well done, <span id="child-name-done"></span>!</h2>
       <p>You've finished all the questions. Great effort!</p>
-      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px;">Now please hand the device back to your grown-up.</p>
+      <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 28px;">Now please hand the device back to your grown-up.</p>
       <button id="show-report-btn" class="btn btn-primary">Show my report</button>
     </div>
   </div>
@@ -584,8 +586,8 @@ input:focus, select:focus {
   <!-- ===== SCREEN: Independence check (parent) ===== -->
   <div id="screen-independence" class="screen">
     <div class="card">
-      <h2 style="color: var(--brand-dark); margin-bottom: 8px;">One quick question for you</h2>
-      <p style="color: var(--text-muted); margin-bottom: 20px;">How much help did your child need during the check?</p>
+      <h2 style="color: var(--brand-dark); margin-bottom: 10px; font-size: 1.5rem;">One quick question for you</h2>
+      <p style="color: var(--text-muted); margin-bottom: 24px; font-size: 1.05rem;">How much help did your child need during the check?</p>
       <div id="independence-options" role="radiogroup" aria-label="Level of help needed" class="answers">
         <button type="button" class="answer" data-value="independent" role="radio" aria-checked="false" tabindex="0">
           <span class="answer-badge" style="background: var(--brand);"><span class="badge-letter">A</span><span class="badge-tick"><svg viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
@@ -625,7 +627,7 @@ input:focus, select:focus {
 
     <p id="save-status" class="save-status"></p>
 
-    <div style="text-align: center; margin-top: 24px;">
+    <div style="text-align: center; margin-top: 28px;">
       <button id="print-btn" class="btn btn-secondary no-print">Print / save as PDF</button>
     </div>
   </div>
