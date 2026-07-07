@@ -562,6 +562,8 @@ function svgTurns(quarters) {
 }
 
 // Arrow: a single large directional arrow with a label, for direction words.
+// Redesigned with a proper, prominent triangular arrowhead that reads
+// unmistakably as an arrow at any size and in any direction.
 function svgArrow(direction) {
   const map = {
     left:  { angle: 180, label: "left" },  right: { angle: 0,   label: "right" },
@@ -570,25 +572,25 @@ function svgArrow(direction) {
     forwards: { angle: 270, label: "forwards" }, backwards: { angle: 90, label: "backwards" }
   };
   const d = map[direction] || map.right;
-  // A fixed "arrow zone" (independent of direction) so the label position
-  // never depends on which way the arrow points — this is what previously
-  // caused the label to overlap the arrow's tail for vertical directions
-  // (up/down/top/bottom), since the label used a fixed y that only worked
-  // for horizontal arrows. Now the arrow is always drawn centred within
-  // the same zone, and the label always sits in its own band well below it.
-  const cx = 100, zoneCy = 80, len = 62;
+  const cx = 100, zoneCy = 80;
   const rad = d.angle * Math.PI / 180;
-  const tx = cx + Math.cos(rad) * len, ty = zoneCy + Math.sin(rad) * len;
-  const bx = cx - Math.cos(rad) * len, by = zoneCy - Math.sin(rad) * len;
-  // Bold, dominant arrowhead and shaft — deliberately large and thick so it
-  // reads immediately as "an arrow", not a thin decorative line.
-  const headLen = 32, headSpread = 2.4;
-  const headA1 = rad + headSpread, headA2 = rad - headSpread;
-  const h1x = tx + Math.cos(headA1) * headLen, h1y = ty + Math.sin(headA1) * headLen;
-  const h2x = tx + Math.cos(headA2) * headLen, h2y = ty + Math.sin(headA2) * headLen;
+  const perpRad = rad + Math.PI / 2;
+  // Shaft: from tail to just before the arrowhead base
+  const shaftLen = 50, headDepth = 30, headHalfW = 28;
+  const tailX = cx - Math.cos(rad) * shaftLen;
+  const tailY = zoneCy - Math.sin(rad) * shaftLen;
+  const headBaseX = cx + Math.cos(rad) * (shaftLen - headDepth);
+  const headBaseY = zoneCy + Math.sin(rad) * (shaftLen - headDepth);
+  const tipX = cx + Math.cos(rad) * (shaftLen + 12);
+  const tipY = zoneCy + Math.sin(rad) * (shaftLen + 12);
+  // Two wing points of the arrowhead triangle
+  const w1x = headBaseX + Math.cos(perpRad) * headHalfW;
+  const w1y = headBaseY + Math.sin(perpRad) * headHalfW;
+  const w2x = headBaseX - Math.cos(perpRad) * headHalfW;
+  const w2y = headBaseY - Math.sin(perpRad) * headHalfW;
   return `<svg viewBox="0 0 200 210" role="img" aria-label="An arrow pointing ${d.label}">
-    <line x1="${bx.toFixed(1)}" y1="${by.toFixed(1)}" x2="${tx.toFixed(1)}" y2="${ty.toFixed(1)}" stroke="#652da0" stroke-width="20" stroke-linecap="round"/>
-    <polygon points="${tx.toFixed(1)},${ty.toFixed(1)} ${h1x.toFixed(1)},${h1y.toFixed(1)} ${h2x.toFixed(1)},${h2y.toFixed(1)}" fill="#652da0"/>
+    <line x1="${tailX.toFixed(1)}" y1="${tailY.toFixed(1)}" x2="${headBaseX.toFixed(1)}" y2="${headBaseY.toFixed(1)}" stroke="#652da0" stroke-width="16" stroke-linecap="round"/>
+    <polygon points="${tipX.toFixed(1)},${tipY.toFixed(1)} ${w1x.toFixed(1)},${w1y.toFixed(1)} ${w2x.toFixed(1)},${w2y.toFixed(1)}" fill="#652da0"/>
     <text x="100" y="190" text-anchor="middle" font-size="32" font-weight="700" font-family="Poppins, Arial" fill="#4e2280">${d.label}</text>
   </svg>`;
 }
@@ -981,7 +983,7 @@ function renderReport(r) {
   const dateStr = new Date(r.completedAt).toLocaleDateString("en-GB", {
     day: "numeric", month: "long", year: "numeric"
   });
-  $("report-title").textContent = `${r.child}’s Maths Skills Check`;
+  $("report-title").textContent = `${r.child}’s Skills Checker - KS1 Maths`;
   $("report-meta").textContent =
     `Key Stage 1 Maths · ${dateStr}` + (r.age ? ` · age ${r.age}` : "");
 
@@ -1130,6 +1132,15 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
   window.__PTO_APP_INITIALIZED__ = true;
+
+  // Hint box size increase (40% larger icon and text, more padding)
+  const hintStyle = document.createElement("style");
+  hintStyle.textContent = `
+    #qside { padding: 1.26rem 1.4rem !important; }
+    #tip-icon { font-size: 2.24rem !important; }
+    #tip-text { font-size: 1.26rem !important; line-height: 1.5 !important; }
+  `;
+  document.head.appendChild(hintStyle);
 
   initSetup();
   $("to-questions-btn").addEventListener("click", startCheck);

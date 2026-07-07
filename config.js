@@ -25,7 +25,7 @@ const PTO_CONFIG = {
 
   // Which assessment this is. Saved with every result so different checks
   // (KS1 Maths, KS1 English, KS2 Maths…) stay distinguishable later.
-  ASSESSMENT_NAME: "KS1 Maths Skills Check",
+  ASSESSMENT_NAME: "Skills Checker - KS1 Maths",
 
   // Version of the QUESTION SET. Bump this whenever you change questions.js,
   // so you always know which questions a child actually answered.

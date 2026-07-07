@@ -5179,7 +5179,7 @@ const PTO_QUESTIONS = [
     "curriculumYear": "Year 2",
     "misconceptionCategory": "times-tables",
     "teacherNote": null,
-    "text": "What is 1 groups of 5?",
+    "text": "What is 1 group of 5?",
     "illustration": null,
     "options": [
       5,
@@ -5188,7 +5188,7 @@ const PTO_QUESTIONS = [
       0
     ],
     "correctIndex": 0,
-    "explanation": "1 groups of 5 is 5. Count in 5s.",
+    "explanation": "1 group of 5 is 5. Count in 5s.",
     "misconception": "Loses count when counting in fives."
   },
   {
@@ -5294,7 +5294,7 @@ const PTO_QUESTIONS = [
     "curriculumYear": "Year 2",
     "misconceptionCategory": "times-tables",
     "teacherNote": null,
-    "text": "What is 1 groups of 10?",
+    "text": "What is 1 group of 10?",
     "illustration": null,
     "options": [
       10,
@@ -5303,7 +5303,7 @@ const PTO_QUESTIONS = [
       1
     ],
     "correctIndex": 0,
-    "explanation": "1 groups of 10 is 10. Count in 10s.",
+    "explanation": "1 group of 10 is 10. Count in 10s.",
     "misconception": "Loses count when counting in tens."
   },
   {
