@@ -29,10 +29,10 @@ const PTO_CONFIG = {
 
   // Version of the QUESTION SET. Bump this whenever you change questions.js,
   // so you always know which questions a child actually answered.
-  ASSESSMENT_VERSION: "v0.9.1-beta",
+  ASSESSMENT_VERSION: "v0.9.2-beta",
 
   // Version of the SOFTWARE (this app). Separate from the question-set version.
-  APP_VERSION: "v0.9.1-beta"
+  APP_VERSION: "v0.9.2-beta"
 };
 
 // Returns true only when real Supabase details have been entered.

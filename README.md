@@ -1,10 +1,10 @@
-# KS1 Maths Skills Check (Version 0.9.1 Beta)
+# KS1 Maths Skills Check (Version 0.9.2 Beta)
 
 A short, friendly Key Stage 1 maths check for **Primary Tutor Online**. A parent
 sets it up, the child answers **37 questions** one screen at a time, and the parent
 gets a simple **strengths and next-steps report**. Results are saved to Supabase.
 
-The 37 questions are chosen at random from a bank of **360 curriculum-mapped
+The 37 questions are chosen at random from a bank of **414 curriculum-mapped
 questions** with balanced coverage of every KS1 maths strand, so repeat sittings
 feel fresh while staying fair and representative.
 
@@ -24,7 +24,7 @@ in `docs/` so the root stays easy to scan.
 | `index.html` | The whole app (all screens) |
 | `styles.css` | PTO design system (purple/white/pink, Poppins, calm, accessible) |
 | `app.js` | Flow, question selection, rendering, report generation, saving |
-| `questions.js` | The 360-question bank + strand definitions — **edit this to change questions** |
+| `questions.js` | The 414-question bank + strand definitions — **edit this to change questions** |
 | `config.js` | **The one file you edit to go live** (Supabase details) |
 | `supabase-setup.sql` | Run once in Supabase to create the results table |
 | `brand-mark.png` | The official Primary Tutor Online logo (header + favicon) |
@@ -551,4 +551,4 @@ and a full pass over the remaining ~173 tips.
 
 ---
 
-Primary Tutor Online · KS1 Maths Skills Check · v0.9.1-beta
+Primary Tutor Online · KS1 Maths Skills Check · v0.9.2-beta
